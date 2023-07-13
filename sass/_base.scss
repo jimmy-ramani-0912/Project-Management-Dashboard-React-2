@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+
+$bg-color: #fdfcfd;
+
+$main-color: #f3eae1;
+$main-sub-color: #f0894f;
+
+$grey-high-dark: #2d2d2d;
+$grey-dark: #464646;
+$grey-light: #9a9b9abe;
+
+$card-1: #fcbda3;
+$card-2: #fde4bc;
+
+.sidebar-icon {
+  height: 2.7rem;
+  width: 2.7rem;
+  color: $grey-dark;
+}
+
+.header-icon {
+  height: 2rem;
+  width: 2rem;
+  color: $grey-dark;
+}
+
+.card-icon {
+  height: 2.6rem;
+  width: 2.6rem;
+  color: black;
+}
+
+.divider {
+  width: 100%;
+  height: 1.2px;
+  background-color: $grey-light;
+  opacity: 0.2;
+}

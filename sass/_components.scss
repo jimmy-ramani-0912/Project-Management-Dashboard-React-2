@@ -1,0 +1,694 @@
+.sidebar {
+  background-color: $bg-color;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 8rem 1.2px 1fr 8rem;
+  place-items: center;
+
+  &__logo {
+    place-items: center;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  &__logo:hover {
+    cursor: pointer;
+  }
+
+  &__options {
+    width: 100%;
+    &-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &-item {
+        padding: 2rem;
+      }
+
+      &-item:hover {
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        background-color: $main-color;
+
+        .sidebar-icon {
+          color: $grey-high-dark;
+        }
+      }
+    }
+  }
+
+  &__doubt {
+    .doubt-icon {
+      height: 4rem;
+      width: 4rem;
+    }
+
+    .doubt-icon:hover {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.header {
+  background-color: $main-color;
+  display: grid;
+  grid-template-rows: 8rem 1.2px 1fr;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 4rem;
+
+    &-main {
+      font-size: 2.2rem;
+    }
+
+    &-sub {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04rem;
+      color: $grey-dark;
+    }
+  }
+
+  &__title:hover {
+    cursor: pointer;
+  }
+
+  &__options {
+    &-list {
+      list-style: none;
+
+      &-item {
+        padding: 1rem 4rem;
+        display: flex;
+        justify-content: space-between;
+
+        &-title {
+          font-size: 1.6rem;
+        }
+      }
+
+      &-item:hover {
+        background-color: #fff;
+        cursor: pointer;
+      }
+
+      &-item:last-child {
+        margin-bottom: 0;
+      }
+
+      &-item:first-child {
+        margin-top: 4.8rem;
+      }
+
+      &-item:nth-child(2),
+      &-item:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+
+        .header__options-list-item-main {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .header__options-list-item-sub {
+          &-list {
+            list-style: none;
+            margin: 1.4rem 1rem 1rem 2rem;
+
+            &-item {
+              margin-bottom: 1.4rem;
+
+              p {
+                font-size: 1.3rem;
+                font-weight: 500;
+                color: $grey-dark;
+              }
+            }
+
+            &-item:last-child {
+              margin-bottom: 0rem;
+
+              p {
+                color: black;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.project {
+  background-color: $bg-color;
+  margin: 2rem 4rem;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.2rem;
+    &-title {
+      font-size: 2.2rem;
+      margin-bottom: 1.4rem;
+    }
+
+    &-search {
+      display: flex;
+      align-items: center;
+      .search-icon {
+        z-index: 1;
+        height: 1.6rem;
+        width: 1.6rem;
+        position: absolute;
+        margin-left: 1.4rem;
+      }
+      & input {
+        position: relative;
+        width: 100%;
+        border: 1px solid rgba(154, 155, 154, 0.4);
+        padding: 1.6rem 4rem;
+        border-radius: 10rem;
+        transition: all 0.4s;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    &-search:hover,
+    &-search input:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__recent-projects {
+    &-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-title {
+        font-size: 2rem;
+      }
+
+      &-sub {
+        font-size: 1.4rem;
+        color: $main-sub-color;
+      }
+
+      &-sub:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+      }
+    }
+
+    &-cards {
+      margin: 2rem 0 4rem 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        height: 30rem;
+        padding: 2.6rem;
+        border-radius: 1.6rem;
+        box-shadow: 0px 0px 3rem 0.1rem rgba(0, 0, 0, 0.1);
+
+        &-top {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 2.6rem;
+
+          &-imgs {
+            display: flex;
+
+            &-item {
+              margin-right: -1.3rem;
+              height: 3.6rem;
+              width: 3.6rem;
+            }
+
+            .img-circle {
+              z-index: 3;
+              font-size: 1.3rem;
+              display: flex;
+              font-weight: 600;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+            }
+
+            img {
+              border-radius: 50%;
+              margin-right: -1.3rem;
+            }
+
+            &-item:nth-child(2) {
+              z-index: 2;
+            }
+          }
+        }
+
+        &-middle {
+          &-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+          }
+          &-sub-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+          }
+        }
+
+        &-last {
+          margin-top: auto;
+          &-progress-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+          }
+          &-progress-section {
+            background-color: rgba(102, 102, 102, 0.4);
+            width: 100%;
+            border-radius: 15px;
+
+            .progress {
+              background-color: black;
+              padding: 1.2%;
+              border-radius: 15px;
+            }
+
+            .design-system {
+              width: 40%;
+            }
+
+            .make-unique {
+              width: 75%;
+            }
+          }
+        }
+      }
+
+      &-item:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+      }
+
+      &-item:first-child {
+        background-color: $card-1;
+        .project__recent-projects-cards-item-top-imgs-item,
+        .project__recent-projects-cards-item-top-imgs img {
+          border: 0.3rem solid $card-1;
+        }
+
+        .img-circle {
+          background-color: black;
+          color: #fff;
+        }
+      }
+
+      &-item:last-child {
+        background-color: $card-2;
+        .project__recent-projects-cards-item-top-imgs-item,
+        .project__recent-projects-cards-item-top-imgs img {
+          border: 0.3rem solid $card-2;
+        }
+
+        .img-circle {
+          background-color: $card-2;
+          color: black;
+          border: 2px solid black;
+        }
+      }
+    }
+  }
+
+  &__reminders {
+    &-section {
+      margin-bottom: 2rem;
+      &-title {
+        font-size: 2rem;
+      }
+    }
+
+    &-card {
+      padding: 2rem 2rem 1rem 2rem;
+      border: 1px solid rgba(154, 155, 154, 0.6);
+      border-radius: 2rem;
+
+      &-detail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-info {
+          &-date {
+            font-size: 1.2rem;
+            color: $grey-dark;
+          }
+          &-title {
+            width: 70%;
+            font-size: 2rem;
+          }
+        }
+
+        &-set-reminder {
+          font-size: 1.2rem;
+          font-weight: 500;
+          border-radius: 2rem;
+          border: 1px dashed #f08a4fce;
+          padding: 0.8rem 2rem;
+        }
+        &-set-reminder:hover {
+          background-color: #f08a4fce;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+
+      &-dots {
+        margin-top: 0.8rem;
+        justify-content: center;
+        display: flex;
+        &-item {
+          height: 0.5rem;
+          width: 0.5rem;
+          border-radius: 50%;
+          background-color: #f9e5d6;
+          margin: 0 0.2rem;
+        }
+
+        &-item:hover {
+          cursor: pointer;
+        }
+
+        &-item:first-child {
+          background-color: $main-sub-color;
+        }
+      }
+    }
+  }
+}
+
+.team {
+  background-color: $bg-color;
+  box-shadow: -0.6rem 0 3rem -2px rgba(0, 0, 0, 0.1);
+  padding: 2rem 4rem;
+
+  &__option-icon {
+    display: flex;
+    height: 4rem;
+    width: 4rem;
+    margin-left: auto;
+    color: $main-sub-color;
+  }
+
+  &__header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4.2rem;
+    &-add-project {
+      background-color: $main-sub-color;
+      padding: 1.6rem 4rem;
+      border-radius: 4rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: 0.04rem;
+    }
+
+    &-profile {
+      display: flex;
+      align-items: center;
+
+      &-notification {
+        position: relative;
+        width: 2.4rem;
+        margin-right: 2rem;
+
+        .dot-noti {
+          position: absolute;
+          height: 0.6rem;
+          width: 0.6rem;
+          border-radius: 50%;
+          top: 0.2rem;
+          right: 0.5rem;
+          background-color: $main-sub-color;
+        }
+      }
+
+      img {
+        height: 3.6rem;
+        border-radius: 50%;
+        margin-right: 1.4rem;
+      }
+
+      &-name {
+        margin-right: 2rem;
+        &-user {
+          font-size: 1.4rem;
+          color: $grey-dark;
+        }
+        &-owner {
+          font-size: 1.8rem;
+        }
+      }
+
+      &-dropdown-icon {
+        background-color: $main-color;
+        height: 2.6rem;
+        width: 2.6rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .dropdown-icon {
+          width: 1.6rem;
+          color: $grey-dark;
+        }
+      }
+    }
+  }
+
+  &__members {
+    &-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    &-imgs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img,
+      &-item {
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 50%;
+      }
+      &-item {
+        font-size: 1.4rem;
+        color: $main-sub-color;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fcf2e0;
+      }
+      &-item-add {
+        height: 2.5rem;
+        width: 2.5rem;
+        display: flex;
+        justify-content: center;
+        background-color: rgba(154, 155, 154, 0.1);
+        border-radius: 50%;
+        color: $main-sub-color;
+        border: 0.2rem dashed $main-sub-color;
+
+        .add-icon {
+          width: 1.8rem;
+        }
+      }
+    }
+  }
+
+  &__project-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.6rem 1.6rem;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 2rem 0.001rem rgba(0, 0, 0, 0.1);
+    margin: 3.2rem 0;
+
+    &-name {
+      color: $grey-dark;
+      font-size: 1.2rem;
+    }
+
+    &-data {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__daily-tasks {
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      &-main {
+        font-size: 2rem;
+      }
+
+      &-sub {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: $main-sub-color;
+        margin-right: 3rem;
+      }
+    }
+
+    &-cards {
+      height: 38vh;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      overflow-y: auto;
+
+      &-item {
+        margin: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.4rem;
+        padding: 1.2rem 1.2rem 1.8rem 2rem;
+        box-shadow: 0px 0px 1rem 0.001rem rgba(0, 0, 0, 0.07);
+
+        &-progress {
+          display: flex;
+          align-items: center;
+          justify-content: end;
+          font-size: 1rem;
+          font-weight: 600;
+          &-dot {
+            height: 0.6rem;
+            width: 0.6rem;
+            margin-right: 1rem;
+            border-radius: 50%;
+          }
+
+          &-check {
+            margin-left: 1rem;
+            height: 1rem;
+            width: 1rem;
+            border: 0.04rem solid $main-sub-color;
+            border-radius: 0.3rem;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        &-title {
+          margin: 2rem 0;
+          width: 90%;
+          font-size: 1.8rem;
+          font-weight: 400;
+        }
+
+        .add-icon {
+          margin-top: auto;
+          margin-left: auto;
+          width: 2rem;
+          margin-right: 1rem;
+          margin-bottom: 0.2rem;
+        }
+      }
+
+      &-item:nth-child(2),
+      &-item:nth-child(3),
+      &-item:nth-child(4) {
+        .add-icon {
+          visibility: hidden;
+        }
+      }
+
+      &-item:first-child {
+        background-color: #f7f1ea;
+
+        .team__daily-tasks-cards-item-progress {
+          visibility: hidden;
+        }
+      }
+
+      &-item:nth-child(2) {
+        .team__daily-tasks-cards-item-progress-dot {
+          background-color: #ff6161;
+        }
+      }
+
+      &-item:nth-child(3) {
+        .team__daily-tasks-cards-item-progress-dot {
+          background-color: aqua;
+        }
+      }
+
+      &-item:nth-child(4) {
+        background-color: $main-sub-color;
+
+        .team__daily-tasks-cards-item-progress-dot {
+          background-color: #fff;
+        }
+
+        .team__daily-tasks-cards-item-progress-title,
+        .team__daily-tasks-cards-item-title {
+          color: #fff;
+        }
+        .team__daily-tasks-cards-item-progress-check {
+          background-color: black;
+          border: none;
+
+          .check-icon {
+            width: 1rem;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &-cards::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__option-icon:hover,
+  .team__header-top-add-project:hover,
+  .notification-icon:hover,
+  .dropdown-icon:hover,
+  .team__members-imgs-item-add:hover,
+  .team__daily-tasks-title-sub:hover,
+  .team__daily-tasks-cards-item:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+
+  .team__header-top-profile-img:hover,
+  .team__members-imgs-item:hover,
+  .team__project-info-timing:hover,
+  .team__project-info-progress:hover,
+  .team__project-info-finished:hover {
+    cursor: pointer;
+  }
+}
