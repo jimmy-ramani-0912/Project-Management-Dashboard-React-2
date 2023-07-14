@@ -33,6 +33,18 @@ body {
   background-color: #9a9b9abe;
   opacity: 0.2; }
 
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 55%; } }
+
+@media screen and (max-width: 1050px) {
+  html {
+    font-size: 47%; } }
+
+@media screen and (max-width: 430px) {
+  html {
+    font-size: 40%; } }
+
 .sidebar {
   background-color: #fdfcfd;
   width: 100%;
@@ -43,6 +55,8 @@ body {
     place-items: center;
     height: 4rem;
     width: 4rem; }
+    .sidebar__logo__title {
+      display: none; }
   .sidebar__logo:hover {
     cursor: pointer; }
   .sidebar__options {
@@ -54,19 +68,80 @@ body {
       align-items: center;
       justify-content: center; }
       .sidebar__options-list-item {
-        padding: 2rem; }
-      .sidebar__options-list-item:hover {
+        padding: 2.6rem; }
+      .sidebar__options-list-item:hover, .sidebar__options-list-item:first-child {
         cursor: pointer;
         width: 100%;
         text-align: center;
         background-color: #f3eae1; }
-        .sidebar__options-list-item:hover .sidebar-icon {
+        .sidebar__options-list-item:hover .sidebar-icon, .sidebar__options-list-item:first-child .sidebar-icon {
           color: #2d2d2d; }
   .sidebar__doubt .doubt-icon {
     height: 4rem;
     width: 4rem; }
   .sidebar__doubt .doubt-icon:hover {
     transform: scale(1.04); }
+  .sidebar .team__header-top-profile {
+    display: none; }
+  @media screen and (max-width: 800px) {
+    .sidebar {
+      grid-column: 2/-1;
+      grid-row: 1/2;
+      grid-template-columns: 1fr 10rem; }
+      .sidebar__logo,
+      .sidebar .divider {
+        display: none; }
+      .sidebar__options {
+        width: 90%; }
+        .sidebar__options-list {
+          flex-direction: row;
+          justify-content: space-between; }
+          .sidebar__options-list-item:hover, .sidebar__options-list-item:first-child {
+            width: 20%; }
+      .sidebar .sidebar__options-list-item:hover {
+        padding: 2.6rem; } }
+  @media screen and (max-width: 600px) {
+    .sidebar {
+      grid-column: 1/-1;
+      grid-row: 1/2;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: 1fr; }
+      .sidebar .team__header-top-profile {
+        display: flex; }
+      .sidebar .team__header-top-profile-dropdown-icon {
+        background-color: #fdfcfd; }
+      .sidebar__logo {
+        display: block;
+        padding: 0 1.6rem; }
+      .sidebar .sidebar__doubt,
+      .sidebar .divider {
+        display: none; }
+      .sidebar .sidebar__logo {
+        background-color: #f3eae1;
+        height: 100%;
+        width: 100%;
+        grid-row: 1/2;
+        display: flex;
+        align-items: center; }
+        .sidebar .sidebar__logo .company-icon-logo {
+          height: 4rem;
+          width: 4rem;
+          margin-right: 1.2rem; }
+        .sidebar .sidebar__logo__title {
+          display: block; }
+        .sidebar .sidebar__logo__title-main {
+          font-size: 2.2rem; }
+        .sidebar .sidebar__logo__title-sub {
+          font-size: 1.2rem; }
+      .sidebar .sidebar__options {
+        width: 100%;
+        grid-row: 2/-1; } }
+  @media screen and (max-width: 430px) {
+    .sidebar .sidebar-icon {
+      height: 3rem;
+      width: 3rem; }
+    .sidebar .sidebar .sidebar__options-list-item:hover {
+      padding: 2rem; } }
 
 .header {
   background-color: #f3eae1;
@@ -76,7 +151,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 4rem; }
+    padding: 0 4rem; }
     .header__title-main {
       font-size: 2.2rem; }
     .header__title-sub {
@@ -121,6 +196,17 @@ body {
           .header__options-list-item:nth-child(2) .header__options-list-item-sub-list-item:last-child p, .header__options-list-item:nth-child(3) .header__options-list-item-sub-list-item:last-child p {
             color: black;
             font-weight: 700; }
+  @media screen and (max-width: 800px) {
+    .header {
+      grid-row: 1/-1;
+      overflow: hidden; }
+      .header .header__options-list-item:first-child {
+        margin-top: 1.8rem; } }
+  @media screen and (max-width: 700px) {
+    .header__title {
+      padding: 0 2.2rem; }
+    .header .header__options-list-item {
+      padding: 1rem 2.2rem; } }
 
 .project {
   background-color: #fdfcfd;
@@ -133,6 +219,7 @@ body {
       font-size: 2.2rem;
       margin-bottom: 1.4rem; }
     .project__header-search {
+      position: relative;
       display: flex;
       align-items: center; }
       .project__header-search .search-icon {
@@ -142,7 +229,6 @@ body {
         position: absolute;
         margin-left: 1.4rem; }
       .project__header-search input {
-        position: relative;
         width: 100%;
         border: 1px solid rgba(154, 155, 154, 0.4);
         padding: 1.6rem 4rem;
@@ -261,7 +347,7 @@ body {
         font-size: 1.2rem;
         color: #464646; }
       .project__reminders-card-detail-info-title {
-        width: 70%;
+        width: 19vw;
         font-size: 2rem; }
       .project__reminders-card-detail-set-reminder {
         font-size: 1.2rem;
@@ -287,10 +373,51 @@ body {
         cursor: pointer; }
       .project__reminders-card-dots-item:first-child {
         background-color: #f0894f; }
+  @media screen and (max-width: 1360px) {
+    .project__header-search input {
+      padding: 1rem 4rem; } }
+  @media screen and (max-width: 1100px) {
+    .project__recent-projects-cards-item {
+      height: 29rem; } }
+  @media screen and (max-width: 800px) {
+    .project {
+      grid-column: 2/3;
+      border-top: 2px solid rgba(154, 155, 154, 0.2);
+      overflow: auto;
+      padding-bottom: 2rem; }
+      .project .project__recent-projects-cards-item-middle-title {
+        font-size: 1.8rem; } }
+  @media screen and (max-width: 700px) {
+    .project .project__recent-projects-cards {
+      grid-template-columns: 1fr;
+      row-gap: 1.4rem; }
+    .project .project__recent-projects-cards-item-middle-title {
+      font-size: 2.2rem; }
+    .project .project__recent-projects-cards-item-top-imgs-item {
+      height: 4rem;
+      width: 4rem; }
+    .project .project__reminders-card-detail {
+      flex-direction: column; }
+    .project .project__reminders-card-detail-info {
+      text-align: center; }
+      .project .project__reminders-card-detail-info-title {
+        width: 24vw;
+        margin-bottom: 1.2rem; } }
+  @media screen and (max-width: 600px) {
+    .project {
+      grid-column: 1/2;
+      grid-row: 2/-1; } }
+  @media screen and (max-width: 430px) {
+    .project {
+      padding: 2rem; }
+      .project .project__header-search input {
+        font-size: 1.4rem; }
+      .project .project__reminders-card-detail-info-title {
+        width: 40vw; } }
 
 .team {
   background-color: #fdfcfd;
-  box-shadow: -0.6rem 0 3rem -2px rgba(0, 0, 0, 0.1);
+  box-shadow: -0.6rem 1rem 3rem -2px rgba(0, 0, 0, 0.1);
   padding: 2rem 4rem 0 4rem; }
   .team__option-icon {
     display: flex;
@@ -319,6 +446,7 @@ body {
         width: 2.4rem;
         margin-right: 2rem; }
         .team__header-top-profile-notification .dot-noti {
+          border: 1.2px solid #fff;
           position: absolute;
           height: 0.6rem;
           width: 0.6rem;
@@ -333,10 +461,10 @@ body {
       .team__header-top-profile-name {
         margin-right: 2rem; }
         .team__header-top-profile-name-user {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           color: #464646; }
         .team__header-top-profile-name-owner {
-          font-size: 1.8rem; }
+          font-size: 1.4rem; }
       .team__header-top-profile-dropdown-icon {
         background-color: #f3eae1;
         height: 2.6rem;
@@ -377,13 +505,11 @@ body {
       border: 0.2rem dashed #f0894f; }
       .team__members-imgs-item-add .add-icon {
         width: 1.8rem; }
-  @media screen and (max-width: 1400px) {
-    .team .hidden {
-      display: none; } }
   .team__project-info {
-    display: flex;
-    justify-content: space-between;
-    padding: 2.6rem 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    padding: 2.6rem 0rem;
     border-radius: 2rem;
     box-shadow: 0px 0px 2rem 0.001rem rgba(0, 0, 0, 0.1);
     margin: 3.2rem 0; }
@@ -405,7 +531,7 @@ body {
       color: #f0894f;
       margin-right: 3rem; }
   .team__daily-tasks-cards {
-    height: 44vh;
+    height: 33rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow-y: auto; }
@@ -438,9 +564,9 @@ body {
           justify-content: center;
           align-items: center; }
       .team__daily-tasks-cards-item-title {
-        margin: 2rem 0;
+        margin: 1.7rem 0;
         width: 90%;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 400; }
       .team__daily-tasks-cards-item .add-icon {
         margin-top: auto;
@@ -488,9 +614,107 @@ body {
   .team .team__project-info-progress:hover,
   .team .team__project-info-finished:hover {
     cursor: pointer; }
+  @media screen and (max-width: 1400px) {
+    .team .hidden {
+      display: none; } }
+  @media screen and (max-width: 1360px) {
+    .team__header-top-add-project {
+      padding: 1rem 2.2rem; } }
+  @media screen and (max-width: 1100px) {
+    .team .hidden2 {
+      display: none; }
+    .team__header-top {
+      flex-direction: column-reverse; }
+      .team__header-top-add-project {
+        margin-top: 1.8rem;
+        margin-right: auto; }
+      .team__header-top-profile {
+        margin-left: auto; }
+    .team__project-info {
+      grid-template-columns: repeat(2, 1fr);
+      place-items: start; }
+      .team__project-info-data {
+        font-size: 1.5rem; }
+      .team__project-info-card {
+        padding: 1rem 2rem; }
+      .team__project-info-card:last-child {
+        padding-bottom: 0; }
+    .team__daily-tasks-cards {
+      height: 17rem; } }
+  @media screen and (max-width: 900px) {
+    .team .team__daily-tasks-cards-item-title {
+      font-size: 1.4rem; } }
+  @media screen and (max-width: 800px) {
+    .team {
+      grid-column: 3/-1;
+      border-top: 2px solid rgba(154, 155, 154, 0.2);
+      overflow: auto;
+      padding-bottom: 2rem; } }
+  @media screen and (max-width: 700px) {
+    .team .team__daily-tasks-cards {
+      grid-template-columns: 1fr; }
+    .team .team__members-imgs-item {
+      height: 3.6rem;
+      width: 3.6rem; }
+    .team .team__daily-tasks-cards-item-title {
+      font-size: 1.8rem; } }
+  @media screen and (max-width: 600px) {
+    .team {
+      grid-column: 2/-1;
+      grid-row: 2/-1;
+      position: relative; }
+      .team .team__header-top-profile {
+        display: none; }
+      .team .team__option-icon {
+        position: absolute;
+        right: 1rem; }
+      .team .team__header-top-add-project {
+        margin-top: 0; }
+      .team .team__members-imgs {
+        gap: 2rem;
+        flex-wrap: wrap; }
+      .team .team__members-imgs-item-add {
+        margin-right: auto; } }
+  @media screen and (max-width: 430px) {
+    .team {
+      padding: 2rem; }
+      .team__project-info {
+        grid-template-columns: 1fr;
+        place-items: center; }
+        .team__project-info-name {
+          font-size: 1.6rem; }
+        .team__project-info-data {
+          font-size: 2rem; }
+        .team__project-info-card {
+          text-align: center; }
+      .team .team__daily-tasks-title {
+        flex-direction: column; }
+        .team .team__daily-tasks-title-main {
+          margin-right: auto; }
+        .team .team__daily-tasks-title-sub {
+          margin-left: auto;
+          margin-right: 0.8rem; } }
+
+@media screen and (max-width: 800px) {
+  .project::-webkit-scrollbar,
+  .team::-webkit-scrollbar,
+  .header::-webkit-scrollbar {
+    display: none; } }
+
+@media screen and (max-width: 600px) {
+  .header {
+    display: none; } }
 
 .container {
   height: 100vh;
-  overflow: auto;
   display: grid;
   grid-template-columns: 9rem 2fr 4fr 3fr; }
+  @media screen and (max-width: 800px) {
+    .container {
+      grid-template-columns: 2fr 4fr 3fr;
+      grid-template-rows: 8rem 1fr; } }
+  @media screen and (max-width: 600px) {
+    .container {
+      grid-template-columns: 4fr 3fr;
+      grid-template-rows: 16rem 1fr;
+      position: relative; } }

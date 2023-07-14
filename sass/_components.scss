@@ -9,6 +9,10 @@
     place-items: center;
     height: 4rem;
     width: 4rem;
+
+    &__title {
+      display: none;
+    }
   }
 
   &__logo:hover {
@@ -25,10 +29,11 @@
       justify-content: center;
 
       &-item {
-        padding: 2rem;
+        padding: 2.6rem;
       }
 
-      &-item:hover {
+      &-item:hover,
+      &-item:first-child {
         cursor: pointer;
         width: 100%;
         text-align: center;
@@ -51,6 +56,104 @@
       transform: scale(1.04);
     }
   }
+
+  .team__header-top-profile {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-column: 2/-1;
+    grid-row: 1/2;
+
+    grid-template-columns: 1fr 10rem;
+    &__logo,
+    .divider {
+      display: none;
+    }
+    &__options {
+      width: 90%;
+      &-list {
+        flex-direction: row;
+        justify-content: space-between;
+
+        &-item:hover,
+        &-item:first-child {
+          width: 20%;
+        }
+      }
+    }
+    .sidebar__options-list-item:hover {
+      padding: 2.6rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+
+    .team__header-top-profile {
+      display: flex;
+    }
+
+    .team__header-top-profile-dropdown-icon {
+      background-color: $bg-color;
+    }
+
+    &__logo {
+      display: block;
+      padding: 0 1.6rem;
+    }
+
+    .sidebar__doubt,
+    .divider {
+      display: none;
+    }
+
+    .sidebar__logo {
+      background-color: $main-color;
+      height: 100%;
+      width: 100%;
+      grid-row: 1/2;
+      display: flex;
+      align-items: center;
+
+      .company-icon-logo {
+        height: 4rem;
+        width: 4rem;
+        margin-right: 1.2rem;
+      }
+
+      &__title {
+        display: block;
+      }
+
+      &__title-main {
+        font-size: 2.2rem;
+      }
+
+      &__title-sub {
+        font-size: 1.2rem;
+      }
+    }
+
+    .sidebar__options {
+      width: 100%;
+      grid-row: 2/-1;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    .sidebar-icon {
+      height: 3rem;
+      width: 3rem;
+    }
+    .sidebar .sidebar__options-list-item:hover {
+      padding: 2rem;
+    }
+  }
 }
 
 .header {
@@ -62,7 +165,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 4rem;
+    padding: 0 4rem;
 
     &-main {
       font-size: 2.2rem;
@@ -145,6 +248,23 @@
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    grid-row: 1/-1;
+    overflow: hidden;
+    .header__options-list-item:first-child {
+      margin-top: 1.8rem;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    &__title {
+      padding: 0 2.2rem;
+    }
+    .header__options-list-item {
+      padding: 1rem 2.2rem;
+    }
+  }
 }
 
 .project {
@@ -161,6 +281,7 @@
     }
 
     &-search {
+      position: relative;
       display: flex;
       align-items: center;
       .search-icon {
@@ -171,7 +292,6 @@
         margin-left: 1.4rem;
       }
       & input {
-        position: relative;
         width: 100%;
         border: 1px solid rgba(154, 155, 154, 0.4);
         padding: 1.6rem 4rem;
@@ -358,7 +478,7 @@
             color: $grey-dark;
           }
           &-title {
-            width: 70%;
+            width: 19vw;
             font-size: 2rem;
           }
         }
@@ -399,11 +519,86 @@
       }
     }
   }
+
+  @media screen and (max-width: 1360px) {
+    &__header {
+      &-search {
+        & input {
+          padding: 1rem 4rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    &__recent-projects {
+      &-cards {
+        &-item {
+          height: 29rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-column: 2/3;
+    border-top: 2px solid rgba(154, 155, 154, 0.2);
+    overflow: auto;
+    padding-bottom: 2rem;
+
+    .project__recent-projects-cards-item-middle-title {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .project__recent-projects-cards {
+      grid-template-columns: 1fr;
+      row-gap: 1.4rem;
+    }
+    .project__recent-projects-cards-item-middle-title {
+      font-size: 2.2rem;
+    }
+
+    .project__recent-projects-cards-item-top-imgs-item {
+      height: 4rem;
+      width: 4rem;
+    }
+
+    .project__reminders-card-detail {
+      flex-direction: column;
+    }
+
+    .project__reminders-card-detail-info {
+      text-align: center;
+      &-title {
+        width: 24vw;
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-column: 1/2;
+    grid-row: 2/-1;
+  }
+
+  @media screen and (max-width: 430px) {
+    padding: 2rem;
+
+    .project__header-search input {
+      font-size: 1.4rem;
+    }
+
+    .project__reminders-card-detail-info-title {
+      width: 40vw;
+    }
+  }
 }
 
 .team {
   background-color: $bg-color;
-  box-shadow: -0.6rem 0 3rem -2px rgba(0, 0, 0, 0.1);
+  box-shadow: -0.6rem 1rem 3rem -2px rgba(0, 0, 0, 0.1);
   padding: 2rem 4rem 0 4rem;
 
   &__option-icon {
@@ -419,6 +614,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 4.2rem;
+
     &-add-project {
       background-color: $main-sub-color;
       padding: 1.6rem 4rem;
@@ -439,6 +635,7 @@
         margin-right: 2rem;
 
         .dot-noti {
+          border: 1.2px solid #fff;
           position: absolute;
           height: 0.6rem;
           width: 0.6rem;
@@ -458,11 +655,11 @@
       &-name {
         margin-right: 2rem;
         &-user {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           color: $grey-dark;
         }
         &-owner {
-          font-size: 1.8rem;
+          font-size: 1.4rem;
         }
       }
 
@@ -525,16 +722,11 @@
     }
   }
 
-  @media screen and (max-width: 1400px) {
-    .hidden {
-      display: none;
-    }
-  }
-
   &__project-info {
-    display: flex;
-    justify-content: space-between;
-    padding: 2.6rem 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    padding: 2.6rem 0rem;
     border-radius: 2rem;
     box-shadow: 0px 0px 2rem 0.001rem rgba(0, 0, 0, 0.1);
     margin: 3.2rem 0;
@@ -569,7 +761,7 @@
     }
 
     &-cards {
-      height: 44vh;
+      height: 33rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       overflow-y: auto;
@@ -609,9 +801,9 @@
         }
 
         &-title {
-          margin: 2rem 0;
+          margin: 1.7rem 0;
           width: 90%;
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           font-weight: 400;
         }
 
@@ -698,4 +890,170 @@
   .team__project-info-finished:hover {
     cursor: pointer;
   }
+
+  @media screen and (max-width: 1400px) {
+    .hidden {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1360px) {
+    &__header-top {
+      &-add-project {
+        padding: 1rem 2.2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    .hidden2 {
+      display: none;
+    }
+
+    &__header-top {
+      flex-direction: column-reverse;
+      &-add-project {
+        margin-top: 1.8rem;
+        margin-right: auto;
+      }
+
+      &-profile {
+        margin-left: auto;
+      }
+    }
+
+    &__project-info {
+      grid-template-columns: repeat(2, 1fr);
+      place-items: start;
+
+      &-data {
+        font-size: 1.5rem;
+      }
+
+      &-card {
+        padding: 1rem 2rem;
+      }
+
+      &-card:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    &__daily-tasks {
+      &-cards {
+        height: 17rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .team__daily-tasks-cards-item-title {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-column: 3/-1;
+    border-top: 2px solid rgba(154, 155, 154, 0.2);
+    overflow: auto;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 700px) {
+    .team__daily-tasks-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .team__members-imgs-item {
+      height: 3.6rem;
+      width: 3.6rem;
+    }
+
+    .team__daily-tasks-cards-item-title {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    position: relative;
+    .team__header-top-profile {
+      display: none;
+    }
+
+    .team__option-icon {
+      position: absolute;
+      right: 1rem;
+    }
+
+    .team__header-top-add-project {
+      margin-top: 0;
+    }
+
+    .team__members-imgs {
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .team__members-imgs-item-add {
+      margin-right: auto;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    padding: 2rem;
+    &__project-info {
+      grid-template-columns: 1fr;
+      place-items: center;
+      &-name {
+        font-size: 1.6rem;
+      }
+      &-data {
+        font-size: 2rem;
+      }
+      &-card {
+        text-align: center;
+      }
+    }
+
+    .team__daily-tasks-title {
+      flex-direction: column;
+      &-main {
+        margin-right: auto;
+      }
+
+      &-sub {
+        margin-left: auto;
+        margin-right: 0.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .project::-webkit-scrollbar,
+  .team::-webkit-scrollbar,
+  .header::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    display: none;
+    // position: absolute;
+    // height: 100%;
+    // z-index: 4;
+    // display: none;
+    // left: -20rem;
+  }
+
+  // .sidebar__options-list-item:hover {
+  //   .header {
+  //     // display: block;
+  //     left: 10rem;
+  //     // z-index: 100;
+  //   }
+  // }
 }

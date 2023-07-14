@@ -51,3 +51,21 @@ $card-2: #fde4bc;
   background-color: $grey-light;
   opacity: 0.2;
 }
+
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  html {
+    font-size: 47%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  html {
+    font-size: 40%;
+  }
+}
