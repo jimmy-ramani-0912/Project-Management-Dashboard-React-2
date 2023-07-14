@@ -149,7 +149,7 @@
 
 .project {
   background-color: $bg-color;
-  margin: 2rem 4rem;
+  padding: 2rem 4rem 0 4rem;
 
   &__header {
     display: flex;
@@ -219,7 +219,7 @@
       &-item {
         display: flex;
         flex-direction: column;
-        height: 30rem;
+        height: 34rem;
         padding: 2.6rem;
         border-radius: 1.6rem;
         box-shadow: 0px 0px 3rem 0.1rem rgba(0, 0, 0, 0.1);
@@ -342,6 +342,7 @@
     }
 
     &-card {
+      flex-direction: column;
       padding: 2rem 2rem 1rem 2rem;
       border: 1px solid rgba(154, 155, 154, 0.6);
       border-radius: 2rem;
@@ -377,7 +378,7 @@
       }
 
       &-dots {
-        margin-top: 0.8rem;
+        margin-top: 2rem;
         justify-content: center;
         display: flex;
         &-item {
@@ -403,7 +404,7 @@
 .team {
   background-color: $bg-color;
   box-shadow: -0.6rem 0 3rem -2px rgba(0, 0, 0, 0.1);
-  padding: 2rem 4rem;
+  padding: 2rem 4rem 0 4rem;
 
   &__option-icon {
     display: flex;
@@ -492,13 +493,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       img,
       &-item {
         height: 4.5rem;
         width: 4.5rem;
         border-radius: 50%;
-      }
-      &-item {
         font-size: 1.4rem;
         color: $main-sub-color;
         font-weight: 500;
@@ -507,6 +507,7 @@
         align-items: center;
         background-color: #fcf2e0;
       }
+
       &-item-add {
         height: 2.5rem;
         width: 2.5rem;
@@ -521,6 +522,12 @@
           width: 1.8rem;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    .hidden {
+      display: none;
     }
   }
 
@@ -562,7 +569,7 @@
     }
 
     &-cards {
-      height: 38vh;
+      height: 44vh;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       overflow-y: auto;

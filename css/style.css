@@ -124,7 +124,7 @@ body {
 
 .project {
   background-color: #fdfcfd;
-  margin: 2rem 4rem; }
+  padding: 2rem 4rem 0 4rem; }
   .project__header {
     display: flex;
     flex-direction: column;
@@ -173,7 +173,7 @@ body {
     .project__recent-projects-cards-item {
       display: flex;
       flex-direction: column;
-      height: 30rem;
+      height: 34rem;
       padding: 2.6rem;
       border-radius: 1.6rem;
       box-shadow: 0px 0px 3rem 0.1rem rgba(0, 0, 0, 0.1); }
@@ -249,6 +249,7 @@ body {
     .project__reminders-section-title {
       font-size: 2rem; }
   .project__reminders-card {
+    flex-direction: column;
     padding: 2rem 2rem 1rem 2rem;
     border: 1px solid rgba(154, 155, 154, 0.6);
     border-radius: 2rem; }
@@ -273,7 +274,7 @@ body {
         color: #fff;
         cursor: pointer; }
     .project__reminders-card-dots {
-      margin-top: 0.8rem;
+      margin-top: 2rem;
       justify-content: center;
       display: flex; }
       .project__reminders-card-dots-item {
@@ -290,7 +291,7 @@ body {
 .team {
   background-color: #fdfcfd;
   box-shadow: -0.6rem 0 3rem -2px rgba(0, 0, 0, 0.1);
-  padding: 2rem 4rem; }
+  padding: 2rem 4rem 0 4rem; }
   .team__option-icon {
     display: flex;
     height: 4rem;
@@ -357,8 +358,7 @@ body {
     .team__members-imgs img, .team__members-imgs-item {
       height: 4.5rem;
       width: 4.5rem;
-      border-radius: 50%; }
-    .team__members-imgs-item {
+      border-radius: 50%;
       font-size: 1.4rem;
       color: #f0894f;
       font-weight: 500;
@@ -377,6 +377,9 @@ body {
       border: 0.2rem dashed #f0894f; }
       .team__members-imgs-item-add .add-icon {
         width: 1.8rem; }
+  @media screen and (max-width: 1400px) {
+    .team .hidden {
+      display: none; } }
   .team__project-info {
     display: flex;
     justify-content: space-between;
@@ -402,7 +405,7 @@ body {
       color: #f0894f;
       margin-right: 3rem; }
   .team__daily-tasks-cards {
-    height: 38vh;
+    height: 44vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow-y: auto; }
@@ -488,5 +491,6 @@ body {
 
 .container {
   height: 100vh;
+  overflow: auto;
   display: grid;
   grid-template-columns: 9rem 2fr 4fr 3fr; }
