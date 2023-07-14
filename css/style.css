@@ -41,10 +41,6 @@ body {
   html {
     font-size: 47%; } }
 
-@media screen and (max-width: 430px) {
-  html {
-    font-size: 40%; } }
-
 .sidebar {
   background-color: #fdfcfd;
   width: 100%;
@@ -408,13 +404,24 @@ body {
     .project {
       grid-column: 1/2;
       grid-row: 2/-1; } }
+  @media screen and (max-width: 500px) {
+    .project {
+      grid-column: 1/-1;
+      grid-row: 2/3; }
+      .project .project__recent-projects-cards {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem; }
+      .project .project__reminders-card-detail {
+        flex-direction: row; }
+      .project .project__reminders-card-detail-info {
+        text-align: start; }
+        .project .project__reminders-card-detail-info-title {
+          width: 50vw; } }
   @media screen and (max-width: 430px) {
     .project {
       padding: 2rem; }
       .project .project__header-search input {
-        font-size: 1.4rem; }
-      .project .project__reminders-card-detail-info-title {
-        width: 40vw; } }
+        font-size: 1.4rem; } }
 
 .team {
   background-color: #fdfcfd;
@@ -676,25 +683,30 @@ body {
         flex-wrap: wrap; }
       .team .team__members-imgs-item-add {
         margin-right: auto; } }
+  @media screen and (max-width: 500px) {
+    .team {
+      grid-column: 1/-1;
+      grid-row: 3/-1; }
+      .team .hidden2,
+      .team .hidden {
+        display: block; }
+      .team .team__daily-tasks-title {
+        flex-direction: row;
+        align-items: center; }
+      .team .team__daily-tasks-cards {
+        height: 33rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem; }
+      .team .team__project-info {
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+        align-items: start; }
+        .team .team__project-info .team__project-info-card {
+          text-align: start; } }
   @media screen and (max-width: 430px) {
     .team {
-      padding: 2rem; }
-      .team__project-info {
-        grid-template-columns: 1fr;
-        place-items: center; }
-        .team__project-info-name {
-          font-size: 1.6rem; }
-        .team__project-info-data {
-          font-size: 2rem; }
-        .team__project-info-card {
-          text-align: center; }
-      .team .team__daily-tasks-title {
-        flex-direction: column; }
-        .team .team__daily-tasks-title-main {
-          margin-right: auto; }
-        .team .team__daily-tasks-title-sub {
-          margin-left: auto;
-          margin-right: 0.8rem; } }
+      padding: 2rem; } }
 
 @media screen and (max-width: 800px) {
   .project::-webkit-scrollbar,
@@ -719,3 +731,7 @@ body {
       grid-template-columns: 4fr 3fr;
       grid-template-rows: 16rem 1fr;
       position: relative; } }
+  @media screen and (max-width: 500px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 16rem repeat(2, max-content); } }

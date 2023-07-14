@@ -1,7 +1,6 @@
 .container {
   height: 100vh;
   // overflow: auto;
-  // overflow-y: hidden;
   display: grid;
   grid-template-columns: 9rem 2fr 4fr 3fr;
 
@@ -14,5 +13,9 @@
     grid-template-columns: 4fr 3fr;
     grid-template-rows: 16rem 1fr;
     position: relative;
+  }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 16rem repeat(2, max-content);
   }
 }

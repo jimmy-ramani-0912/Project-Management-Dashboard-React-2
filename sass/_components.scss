@@ -584,15 +584,31 @@
     grid-row: 2/-1;
   }
 
+  @media screen and (max-width: 500px) {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    .project__recent-projects-cards {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+    }
+
+    .project__reminders-card-detail {
+      flex-direction: row;
+    }
+
+    .project__reminders-card-detail-info {
+      text-align: start;
+      &-title {
+        width: 50vw;
+      }
+    }
+  }
+
   @media screen and (max-width: 430px) {
     padding: 2rem;
 
     .project__header-search input {
       font-size: 1.4rem;
-    }
-
-    .project__reminders-card-detail-info-title {
-      width: 40vw;
     }
   }
 }
@@ -1002,33 +1018,39 @@
     }
   }
 
-  @media screen and (max-width: 430px) {
-    padding: 2rem;
-    &__project-info {
-      grid-template-columns: 1fr;
-      place-items: center;
-      &-name {
-        font-size: 1.6rem;
-      }
-      &-data {
-        font-size: 2rem;
-      }
-      &-card {
-        text-align: center;
-      }
+  @media screen and (max-width: 500px) {
+    grid-column: 1/-1;
+    grid-row: 3/-1;
+
+    .hidden2,
+    .hidden {
+      display: block;
     }
 
     .team__daily-tasks-title {
-      flex-direction: column;
-      &-main {
-        margin-right: auto;
-      }
+      flex-direction: row;
+      align-items: center;
+    }
 
-      &-sub {
-        margin-left: auto;
-        margin-right: 0.8rem;
+    .team__daily-tasks-cards {
+      height: 33rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .team__project-info {
+      grid-template-columns: repeat(3, 1fr);
+      place-items: center;
+      align-items: start;
+      .team__project-info-card {
+        text-align: start;
       }
     }
+  }
+
+  @media screen and (max-width: 430px) {
+    padding: 2rem;
   }
 }
 
