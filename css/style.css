@@ -171,7 +171,8 @@ body {
         font-size: 1.6rem; }
     .header__options-list-item:hover {
       background-color: #fff;
-      cursor: pointer; }
+      cursor: pointer;
+      border-radius: 0.6rem; }
     .header__options-list-item:last-child {
       margin-bottom: 0; }
     .header__options-list-item:first-child {
