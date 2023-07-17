@@ -70,7 +70,7 @@
   @media screen and (max-width: 800px) {
     grid-column: 2/-1;
     grid-row: 1/2;
-
+    gap: 6rem;
     grid-template-columns: 1fr 10rem;
     &__logo,
     .divider {

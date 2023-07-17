@@ -84,6 +84,7 @@ body {
     .sidebar {
       grid-column: 2/-1;
       grid-row: 1/2;
+      gap: 6rem;
       grid-template-columns: 1fr 10rem; }
       .sidebar__logo,
       .sidebar .divider {
