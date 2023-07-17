@@ -96,6 +96,7 @@
   @media screen and (max-width: 600px) {
     grid-column: 1/-1;
     grid-row: 1/2;
+    gap: 0;
 
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: 1fr;
