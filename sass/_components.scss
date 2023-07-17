@@ -31,18 +31,6 @@
       &-item {
         padding: 2.6rem;
       }
-
-      &-item:hover,
-      &-item:first-child {
-        cursor: pointer;
-        width: 100%;
-        text-align: center;
-        background-color: $main-color;
-
-        .sidebar-icon {
-          color: $grey-high-dark;
-        }
-      }
     }
   }
 
@@ -61,6 +49,24 @@
     display: none;
   }
 
+  @media screen and (min-width: 600px) {
+    &__options {
+      &-list {
+        &-item:hover,
+        &-item:first-child {
+          cursor: pointer;
+          width: 100%;
+          text-align: center;
+          background-color: $main-color;
+
+          .sidebar-icon {
+            color: $grey-high-dark;
+          }
+        }
+      }
+    }
+  }
+
   @media screen and (max-width: 800px) {
     grid-column: 2/-1;
     grid-row: 1/2;
@@ -70,8 +76,9 @@
     .divider {
       display: none;
     }
+
     &__options {
-      width: 90%;
+      width: 100%;
       &-list {
         flex-direction: row;
         justify-content: space-between;
@@ -142,6 +149,25 @@
     .sidebar__options {
       width: 100%;
       grid-row: 2/-1;
+    }
+
+    &__options {
+      &-list {
+        justify-content: space-between;
+        &-item:hover {
+          cursor: pointer;
+          width: 20%;
+          text-align: center;
+          background-color: $main-color;
+
+          .sidebar-icon {
+            color: $grey-high-dark;
+          }
+        }
+        &-item:first-child {
+          width: auto;
+        }
+      }
     }
   }
 
@@ -252,7 +278,6 @@
 
   @media screen and (max-width: 800px) {
     grid-row: 1/-1;
-    overflow: hidden;
     .header__options-list-item:first-child {
       margin-top: 1.8rem;
     }
@@ -1021,6 +1046,10 @@
   @media screen and (max-width: 500px) {
     grid-column: 1/-1;
     grid-row: 3/-1;
+    .team__members-imgs-item {
+      height: 4rem;
+      width: 4rem;
+    }
 
     .hidden2,
     .hidden {
@@ -1044,8 +1073,17 @@
       place-items: center;
       align-items: start;
       .team__project-info-card {
-        text-align: start;
+        text-align: center;
       }
+    }
+
+    .team__project-info-name {
+      font-size: 1.4rem;
+    }
+
+    .team__project-info-data {
+      font-size: 1.8rem;
+      margin-top: 0.6rem;
     }
   }
 
@@ -1063,20 +1101,29 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header {
-    display: none;
-    // position: absolute;
-    // height: 100%;
-    // z-index: 4;
-    // display: none;
-    // left: -20rem;
+  .header__title {
+    padding: 0.2rem 2.2rem;
   }
 
-  // .sidebar__options-list-item:hover {
-  //   .header {
-  //     // display: block;
-  //     left: 10rem;
-  //     // z-index: 100;
-  //   }
-  // }
+  .header {
+    border-radius: 1.2rem;
+    position: absolute;
+    height: 100vh;
+    z-index: 4;
+    left: -27rem;
+    visibility: hidden;
+
+    .header__options {
+      overflow: auto;
+    }
+    .header__options::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .display-block {
+    visibility: visible;
+    left: 0;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
 }

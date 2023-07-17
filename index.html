@@ -13,6 +13,18 @@
       rel="stylesheet"
     />
   </head>
+  <script>
+    window.onload = () => {
+      const elem = document.querySelector(".sidebar__options-list");
+      elem.addEventListener("mouseover", (e) => {
+        document.querySelector(".header").classList.add("display-block");
+      });
+
+      elem.addEventListener("mouseout", (e) => {
+        document.querySelector(".header").classList.remove("display-block");
+      });
+    };
+  </script>
   <body>
     <div class="container">
       <section class="sidebar">
