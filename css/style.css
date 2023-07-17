@@ -417,6 +417,7 @@ body {
       grid-row: 2/-1; } }
   @media screen and (max-width: 500px) {
     .project {
+      margin-bottom: 4rem;
       grid-column: 1/-1;
       grid-row: 2/3; }
       .project .project__recent-projects-cards {
