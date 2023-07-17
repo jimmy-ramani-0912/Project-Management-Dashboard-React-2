@@ -429,6 +429,7 @@ body {
           margin-bottom: 1.2rem; } }
   @media screen and (max-width: 500px) {
     .project {
+      height: 100% !important;
       padding: 2rem;
       margin-bottom: 4rem;
       grid-column: 1/-1;
@@ -717,6 +718,7 @@ body {
         margin-right: auto; } }
   @media screen and (max-width: 500px) {
     .team {
+      height: 100% !important;
       padding: 2rem;
       grid-column: 1/-1;
       grid-row: 3/-1; }

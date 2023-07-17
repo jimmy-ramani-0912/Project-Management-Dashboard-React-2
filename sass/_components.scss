@@ -627,6 +627,7 @@
   }
 
   @media screen and (max-width: 500px) {
+    height: 100% !important;
     padding: 2rem;
     margin-bottom: 4rem;
     grid-column: 1/-1;
@@ -1069,6 +1070,8 @@
   }
 
   @media screen and (max-width: 500px) {
+    height: 100% !important;
+
     padding: 2rem;
     grid-column: 1/-1;
     grid-row: 3/-1;
