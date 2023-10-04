@@ -1,4 +1,4 @@
-# Dashboard Design
+# Project Management Dashboard Design
 
 Welcome to my awesome website! This site showcases my projects, portfolio, and other cool stuff.
 
