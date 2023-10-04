@@ -19,3 +19,11 @@ To view the website locally or make changes, follow these steps:
 ## Contributing
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
+
+## Demo
+
+![Large Screen](./t6-1.png)
+![Tablet Screen](./t6-2.png)
+![Mobile Screen](./t6-3.png)
+
+
